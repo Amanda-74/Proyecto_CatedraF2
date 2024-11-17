@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafica</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Grafica</h1>
+        
+    </header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="depositar.html">Depositar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="retiro.html">Retirar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="saldo.html">Consultar saldo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicios.html">Pagar servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="historial.html">Historial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Salir</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Historial de Transacciones</h2>
+        <table class="table table-striped" id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Tipo de Transacción</th>
+                    <th>Monto</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-09-20</td>
+                    <td>Depósito</td>
+                    <td>$1000.00</td>
+                    
+                </tr>
+                <tr>
+                    <td>2024-09-18</td>
+                    <td>Retiro</td>
+                    <td>$200.00</td>
+                    
+                </tr>
+                <tr>
+                    <td>2024-09-15</td>
+                    <td>Transferencia</td>
+                    <td>$500.00</td>
+                    
+                </tr>
+                <!-- Más transacciones aquí -->
+            </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="downloadPDF()">Descargar PDF</button>
+        <canvas id="transactionChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text("Historial de Transacciones", 20, 20);
+            doc.autoTable({ html: '#transactionTable', startY: 30 });
+
+            doc.save('historial_transacciones.pdf');
+        }
+
+        // Datos de ejemplo para la gráfica
+        const transactionData = {
+            labels: ['2024-09-20', '2024-09-18', '2024-09-15'],
+            datasets: [{
+                label: 'Monto de Transacciones',
+                data: [1000, 200, 500],
+                backgroundColor: ['rgba(255, 206, 86, 0.2)'], // Color de fondo amarillo
+                borderColor: ['rgba(255, 206, 86, 1)'],
+                borderWidth: 1
+            }]
+        };
+
+        // Configuración de la gráfica
+        const config = {
+            type: 'bar',
+            data: transactionData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // Renderizar la gráfica
+        const ctx = document.getElementById('transactionChart').getContext('2d');
+        new Chart(ctx, config);
+    </script>
+
+    
+
+</body>
+</html>

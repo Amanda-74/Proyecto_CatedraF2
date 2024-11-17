@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <title>Inicio</title>
+</head>
+<body>
+    <header>
+      <h1>Bienvenido al Cajero Automático</h1>
+      
+  </header>
+
+<nav class="navbar navbar-expand-lg">
+<div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="depositar.html">Depositar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="retiro.html">Retirar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="saldo.html">Consultar saldo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="servicios.html">Pagar servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="historial.html">Historial</a>
+      </li>
+      <li class="nav-item"></li>
+        <a class="nav-link" href="grafica.html">Grafico</a>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-secondary" onclick="logout()">Salir</button>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+    
+    <div class="container mt-5">
+        
+        <div id="user-info">
+            <h3>Bienvenido, <span id="user-name"></span></h3>
+            <p><strong>Número de cuenta:</strong> <span id="account-number"></span></p>
+            <p><strong>Saldo inicial:</strong> <span id="initial-balance"></span></p>
+            <button class="btn btn-primary" onclick="selectTransaction()">Seleccionar Transacción</button>
+            <button class="btn btn-secondary" onclick="logout()">Salir</button>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+
+
+
+<hr>
+
+<section id="galeria" class="container">
+<div class="text-center pt-5">
+  <h2>Nuestros servicios!!!!</h2><hr><br>
+</div>
+
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-12" >
+    <h3>Depostio</h3><br>
+    <img src="img/deposito.jpeg">
+  </div>
+     <div class="col-lg-4 col-md-6 col-sm-12">
+        <h3>Retiro</h3><br>
+    <img src="img/retiro.jpg">
+  </div>
+   <div class="col-lg-4 col-md-6 col-sm-12">
+        <h3>Saldo</h3><br>
+    <img src="img/saldo.jpg">
+  </div>
+</div>
+<hr><br>
+
+</section>
+
+<section id="galeria" class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" >
+      <h3>Pago de servicios</h3><br>
+      <img src="img/pago.jpg">
+    </div>
+       <div class="col-lg-4 col-md-6 col-sm-12">
+          <h3>Historial de transacciones</h3><br>
+      <img src="img/transaccion.png">
+    </div>
+     <div class="col-lg-4 col-md-6 col-sm-12">
+          <h3>Grafica</h3><br>
+      <img src="img/grafica.jpg">
+    </div>
+  </div>
+</section>
+<hr><br>
+<br>
+<div class="contact">
+<p><b>RECUERDA QUE PUEDES CONTACTARNOS POR MEDIO DE LOS SIGUIENTES MEDIOS</b></p>
+<hr>
+
+<ol class="container-fluid">
+  <li>Telefono: 2243-5698</li>
+  <li>Correo: Mypokbank.com</li>
+  <li>Horario: Lunes - Viernes de 8AM a 4PM</li>
+  
+</ol>
+</div>
+<footer class="container-fluid">
+  <i class="bi bi-facebook"><a href="https://www.facebook.com/">Facebook</a></i>
+  <i class="bi bi-messenger"><a href="https://www.messenger.com/">Instagram</a></i>
+  <i class="bi bi-whatsapp"><a href="https://www.whatsapp.com/">WhatsApp</a></i>
+</footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+header{
+	background-color: #7385c0;
+	background-repeat: no-repeat;
+	height: 90px;
+	text-align: center;
+	font-family: bradley hand;
+	color: black;
+	padding-top: 20px;
+}
+body{
+	background-repeat: repeat-y;
+	background-image: url("https://wallpapercave.com/wp/wp2763459.jpg");
+	
+
+}
+
+img{
+	border-radius: 10%;
+	width: 30%;
+	height: 40%;
+	margin-left: 10%;
+	margin-right: 25%;
+	text-align: center;
+}
+.index{
+	font-family: times new roman;
+	margin-left: 30px;
+	margin-right: 20px;
+	font-size: 20px;
+}
+
+.contact{
+	margin-left: 40px;
+	margin-right: 20px;
+	font-family: times new roman;
+	font-size: 20px;
+	text-align: center;
+}
+nav{
+	background-color: #c1c7c5;
+	color: white;
+	font-size: 20px;
+	font-family: times new roman;
+}
+ol{
+	text-align: center;
+	list-style: none;
+	text-align: justify;
+	margin-left: 30%;
+}
+h2{
+	font-family: times new roman;
+}
+h3{
+	margin-left:15%;
+	font-family: times new roman;
+	
+}
+#galeria .col-md-4{
+	margin: 0 !important;
+
+	} 
+
+#galeria img{
+	width: 60%;
+	height: 90%;
+	padding-bottom: 25px;
+	margin-left: 45px;
+}
+
+#galeria img:hover{
+	border: 5px solid white;
+}
+.img-fluid{
+	text-align: center;
+	margin-left: 38%;
+}
+
+footer{
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #F08080;
+	text-align: center;
+	
+}
